@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(bg.gif);
+    background-color: #f0f0f0;
+    background-blend-mode: screen;
+    transition: background-color 0.4s ease;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    padding: 10em;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 8px solid rgb(32, 30, 30);
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+}
+
+.box img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.box:hover {
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.box:hover img {
+    display: none;
+}
+
+.box:hover span, .box:hover p {
+    opacity: 1;
+}
+
+.box p {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    font-size: 16px;
+    color: rgb(32, 30, 30);
+    text-align: center;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.box span {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    font-size: 24px;
+    color: rgb(32, 30, 30);
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-weight: bold;
+}
+
+.box:hover span {
+    opacity: 1;
+}
+
+.box:hover p {
+    opacity: 1;
+}
+
+.box code {
+    background-color: #d3d3d3;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.container:hover .box {
+    opacity: 1;
+    transform: translateX(0);
+}
